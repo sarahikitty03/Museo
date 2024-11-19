@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import { Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -22,7 +21,7 @@ function ObrasStack() {
         name="GestionObraScreen" 
         component={GestionObraScreen} 
         options={({ navigation }) => ({
-          title: 'Obras',
+          title: 'Catálogo de Obras',
           headerRight: () => (
             <Button
               onPress={() => navigation.navigate('RegistroObraScreen')}
@@ -48,7 +47,7 @@ function AntiguedadesStack() {
         name="GestionAntiguedadScreen" 
         component={GestionAntiguedadScreen} 
         options={({ navigation }) => ({
-          title: 'ANTIGÜEDADES',
+          title: 'Galeria de Antigüedades',
           headerRight: () => (
             <Button
               onPress={() => navigation.navigate('RegistroAntiguedadScreen')}
@@ -103,17 +102,17 @@ export default function App() {
         <Tab.Screen 
           name="Obras" 
           component={ObrasStack} 
-          options={{ title: 'Museo' }}
+          options={{ title: 'Obras' }}
         />
         <Tab.Screen 
           name="Antiguedades" 
           component={AntiguedadesStack} 
-          options={{ title: 'Museo' }}
+          options={{ title: 'Antigüedades' }}
         />
         <Tab.Screen 
           name="Estadisticas" 
           component={EstadisticasStack} 
-          options={{ title: 'Museo' }}
+          options={{ title: 'Estadisticas' }}
         />
       </Tab.Navigator>
     </NavigationContainer>

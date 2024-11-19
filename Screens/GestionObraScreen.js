@@ -1,4 +1,3 @@
-// GestionObraScreen.js
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, TextInput, Button, Alert, Modal, StyleSheet, Image, RefreshControl } from 'react-native';
 import { collection, getDocs, doc, deleteDoc, updateDoc } from 'firebase/firestore';
@@ -181,7 +180,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 5,
     padding: 10,
-    backgroundColor: '#ffffff', // Fondo blanco para cada obra
+    backgroundColor: '#ffffff',
     borderRadius: 12,
     alignItems: 'center',
     shadowColor: '#000',
@@ -199,7 +198,7 @@ const styles = StyleSheet.create({
   modalContent: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5', // Fondo más claro en el modal
+    backgroundColor: '#f5f5f5',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     shadowColor: '#000',

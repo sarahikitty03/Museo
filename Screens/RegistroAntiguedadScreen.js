@@ -79,7 +79,7 @@ const RegistroAntiguedadScreen = ({ navigation }) => {
       <TextInput style={styles.input} placeholder="Estado de Conservación" value={antiguedad.estado_conservacion} onChangeText={(text) => handleChangeText('estado_conservacion', text)} />
       <TextInput style={styles.input} placeholder="Material" value={antiguedad.material} onChangeText={(text) => handleChangeText('material', text)} />
       <TextInput style={styles.input} placeholder="Ubicación" value={antiguedad.ubicacion} onChangeText={(text) => handleChangeText('ubicacion', text)} />
-      <TextInput style={styles.input} placeholder="Valor Histórico" value={antiguedad.valor_historico} onChangeText={(text) => handleChangeText('valor_historico', text)} />
+      <TextInput style={styles.input} placeholder="Valor Histórico" value={antiguedad.valor_historico} onChangeText={(text) => handleChangeText('valor_historico', text)} keyboardType="numeric" />
       
       <Button title="Registrar Antigüedad" onPress={handleRegister} />
     </ScrollView>

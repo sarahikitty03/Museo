@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Button, Text, Dimensions, StyleSheet, ScrollView, RefreshControl } from 'react-native';
+import { Button, Text, Dimensions, StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 import * as Print from 'expo-print';
 import * as Sharing from 'expo-sharing';
@@ -101,7 +101,7 @@ const EstadisticasScreen = () => {
         data={obraData}
         width={Dimensions.get('window').width - 20}
         height={220}
-        yAxisLabel="C$"
+        yAxisLabel="$"
         chartConfig={{
           backgroundColor: '#1cc910',
           backgroundGradientFrom: '#eff3ff',
@@ -120,7 +120,7 @@ const EstadisticasScreen = () => {
         data={antiguedadData}
         width={Dimensions.get('window').width - 20}
         height={220}
-        yAxisLabel="C$"
+        yAxisLabel="$"
         chartConfig={{
           backgroundColor: '#f7b731',
           backgroundGradientFrom: '#fef3c7',

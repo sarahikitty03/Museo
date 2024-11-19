@@ -1,4 +1,3 @@
-// GestionAntiguedadScreen.js
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, TextInput, Button, Alert, Modal, StyleSheet, Image, RefreshControl } from 'react-native';
 import { collection, getDocs, doc, deleteDoc, updateDoc } from 'firebase/firestore';
