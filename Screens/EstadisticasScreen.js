@@ -39,7 +39,7 @@ const EstadisticasScreen = () => {
       const querySnapshot = await getDocs(collection(db, 'galeria_antiguedades'));
       querySnapshot.forEach((doc) => {
         labels.push(doc.data().nombre);
-        values.push(doc.data().valor_estimado || 0);
+        values.push(parseInt(doc.data().valor_historico || 0));
       });
       setAntiguedadData({ labels, datasets: [{ data: values }] });
     } catch (error) {
@@ -105,9 +105,9 @@ const EstadisticasScreen = () => {
         chartConfig={{
           backgroundColor: '#1cc910',
           backgroundGradientFrom: '#eff3ff',
-          backgroundGradientTo: '#efefef',
+          backgroundGradientTo: '#cc99cc',
           decimalPlaces: 0,
-          color: (opacity = 1) => `rgba(0, 0, 255, ${opacity})`,
+          color: (opacity = 1) => `rgba(73, 76, 77, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
           style: { borderRadius: 16 },
           barPercentage: 0.5,
@@ -123,7 +123,7 @@ const EstadisticasScreen = () => {
         yAxisLabel="$"
         chartConfig={{
           backgroundColor: '#f7b731',
-          backgroundGradientFrom: '#fef3c7',
+          backgroundGradientFrom: '#cc99cc',
           backgroundGradientTo: '#fef9e7',
           decimalPlaces: 0,
           color: (opacity = 1) => `rgba(255, 165, 0, ${opacity})`,
@@ -134,7 +134,7 @@ const EstadisticasScreen = () => {
         style={styles.chart}
       />
 
-      <Button title="Generar PDF y Enviar por WhatsApp" onPress={generatePDF} />
+      <Button title="Generar PDF" onPress={generatePDF} />
     </ScrollView>
   );
 };
