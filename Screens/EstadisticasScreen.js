@@ -126,7 +126,7 @@ const EstadisticasScreen = () => {
           backgroundGradientFrom: '#cc99cc',
           backgroundGradientTo: '#fef9e7',
           decimalPlaces: 0,
-          color: (opacity = 1) => `rgba(255, 165, 0, ${opacity})`,
+          color: (opacity = 1) => `rgba(73, 76, 77, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
           style: { borderRadius: 16 },
           barPercentage: 0.5,

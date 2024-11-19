@@ -1,6 +1,6 @@
 // RegistroAntiguedadScreen.js
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet, ScrollView, Alert, TouchableOpacity, Image } from 'react-native';
+import {TextInput, Button, Text, StyleSheet, ScrollView, Alert, TouchableOpacity, Image } from 'react-native';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../Firebase/BDconfi';
 import * as ImagePicker from 'expo-image-picker';
@@ -64,13 +64,13 @@ const RegistroAntiguedadScreen = ({ navigation }) => {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Registrar Antigüedad</Text>
 
-      <TouchableOpacity style={styles.imagePicker} onPress={pickImage}>
-        {antiguedad.imagen_url ? (
-          <Image source={{ uri: antiguedad.imagen_url }} style={styles.imagePreview} />
-        ) : (
-          <Text style={styles.imagePickerText}>Seleccionar Imagen</Text>
-        )}
+
+      <TouchableOpacity style={styles.imageButton} onPress={pickImage}>
+        <Text style={styles.imageButtonText}>Seleccionar Imagen</Text>
       </TouchableOpacity>
+      {antiguedad.imagen_url ? (
+        <Image source={{ uri: antiguedad.imagen_url }} style={styles.imagePreview} />
+      ) : null}
 
       <TextInput style={styles.input} placeholder="Nombre" value={antiguedad.nombre} onChangeText={(text) => handleChangeText('nombre', text)} />
       <TextInput style={styles.input} placeholder="Época" value={antiguedad.epoca} onChangeText={(text) => handleChangeText('epoca', text)} />
@@ -91,26 +91,13 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#f7f7f7',
     flexGrow: 1,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    textAlign: 'center',
-  },
-  imagePicker: {
-    alignItems: 'center',
-    marginBottom: 15,
-  },
-  imagePickerText: {
-    color: '#007bff',
-    fontWeight: 'bold',
-  },
-  imagePreview: {
-    width: 200,
-    height: 200,
-    borderRadius: 10,
+    textAlign: 'center'
   },
   input: {
     height: 50,
@@ -119,7 +106,24 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 10,
     marginBottom: 15,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff'
+  },
+  imageButton: {
+    backgroundColor: '#4caf50',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 15
+  },
+  imageButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  imagePreview: {
+    width: '100%',
+    height: 200,
+    borderRadius: 8,
+    marginBottom: 15,
   },
 });
 

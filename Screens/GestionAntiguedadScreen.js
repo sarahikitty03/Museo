@@ -70,6 +70,7 @@ const GestionAntiguedadScreen = ({ navigation }) => {
     }}>
       <View style={styles.catalogContainer}>
         <Image source={{ uri: item.imagen_url }} style={styles.catalogImage} />
+        <Text style={styles.catalogText}>{item.nombre}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -170,9 +171,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   catalogImage: {
-    width: 150,
+    width: 140,
     height: 200,
     borderRadius: 8,
+  },
+  catalogText: {
+    marginTop: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#333',
   },
   modalContent: {
     flex: 1,
@@ -194,7 +202,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   imagePickerText: {
-    color: '#007bff',
+    color: '#999966',
     fontWeight: 'bold',
     marginTop: 10,
   },

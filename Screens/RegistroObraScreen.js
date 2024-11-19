@@ -1,6 +1,6 @@
 // RegistroObraScreen.js
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet, ScrollView, Alert, TouchableOpacity, Image } from 'react-native';
+import { TextInput, Button, Text, StyleSheet, ScrollView, Alert, TouchableOpacity, Image } from 'react-native';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../Firebase/BDconfi';
 import * as ImagePicker from 'expo-image-picker';
@@ -75,7 +75,7 @@ const RegistroObraScreen = ({ navigation }) => {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Registrar Obra de Arte</Text>
       
-      {/* Botón para seleccionar imagen y vista previa */}
+      
       <TouchableOpacity style={styles.imageButton} onPress={pickImage}>
         <Text style={styles.imageButtonText}>Seleccionar Imagen</Text>
       </TouchableOpacity>
@@ -83,7 +83,7 @@ const RegistroObraScreen = ({ navigation }) => {
         <Image source={{ uri: obra.imagen_url }} style={styles.imagePreview} />
       ) : null}
 
-      {/* Resto del formulario */}
+      
       <TextInput style={styles.input} placeholder="Artista" value={obra.artista} onChangeText={(text) => handleChangeText('artista', text)} />
       <TextInput style={styles.input} placeholder="Año" value={obra.año} onChangeText={(text) => handleChangeText('año', text)} keyboardType="numeric" />
       <TextInput style={styles.input} placeholder="Descripción" value={obra.descripcion} onChangeText={(text) => handleChangeText('descripcion', text)} multiline />
