@@ -62,13 +62,13 @@ const EstadisticasScreen = () => {
           <h2>Obras</h2>
           <ul>
             ${obraData.labels.map(
-              (label, index) => `<li>${label}: C$${obraData.datasets[0].data[index]}</li>`
+              (label, index) => `<li>${label}: $${obraData.datasets[0].data[index]}</li>`
             ).join('')}
           </ul>
           <h2>Antigüedades</h2>
           <ul>
             ${antiguedadData.labels.map(
-              (label, index) => `<li>${label}: C$${antiguedadData.datasets[0].data[index]}</li>`
+              (label, index) => `<li>${label}: $${antiguedadData.datasets[0].data[index]}</li>`
             ).join('')}
           </ul>
         </body>
