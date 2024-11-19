@@ -141,6 +141,7 @@ const GestionAntiguedadScreen = ({ navigation }) => {
             style={styles.input}
             value={selectedAntiguedad?.valor_historico}
             onChangeText={(text) => setSelectedAntiguedad({ ...selectedAntiguedad, valor_historico: text })}
+            keyboardType="numeric"
           />
 
           <View style={styles.modalActions}>

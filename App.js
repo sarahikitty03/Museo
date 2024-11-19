@@ -72,7 +72,9 @@ function EstadisticasStack() {
       <Stack.Screen 
         name="EstadisticasMain" 
         component={EstadisticasScreen} 
-        options={{ title: 'Estadísticas' }}
+        options={{ title: 'Estadísticas',
+          headerShown: false
+         }}
       />
     </Stack.Navigator>
   );
@@ -97,6 +99,7 @@ export default function App() {
           },
           tabBarActiveTintColor: '#cc99ff',
           tabBarInactiveTintColor: 'purple',
+          headerShown: false,
         })}
       >
         <Tab.Screen 
